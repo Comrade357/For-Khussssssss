@@ -4,510 +4,1098 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10091e">
-<title>For Khusssss ♡</title>
+<meta name="theme-color" content="#10091b">
+<title>For My Khusssss 💗</title>
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#10091e;color:#fff0fb;font-family:Georgia,serif}
-button,input{font:inherit}
-button{cursor:pointer}
-.hidden{display:none!important}
-
-:root{
- --pink:#ffaddf;
- --purple:#bca0ff;
- --gold:#ffe7bd;
- --glass:rgba(255,255,255,.07);
+:root {
+  --bg:#10091b;
+  --panel:rgba(255,255,255,.065);
+  --pink:#ff8ecb;
+  --purple:#bd9aff;
+  --gold:#ffe1a8;
+  --text:#fff3fb;
+  --muted:#d5c4dc;
 }
-
-body:before{
- content:"";position:fixed;inset:0;z-index:-1;
- background:radial-gradient(ellipse at 10% 10%,#70245e66,transparent 45%),
- radial-gradient(ellipse at 90% 75%,#44308177,transparent 45%),#10091e
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:
+    radial-gradient(ellipse at top,#3a1745 0%,transparent 55%),
+    radial-gradient(ellipse at bottom right,#29113d 0%,transparent 45%),
+    var(--bg);
+  color:var(--text);
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden;
 }
-
-/* FLOATING HEARTS AND SPARKLES */
-.particle{
- position:absolute;bottom:-60px;pointer-events:none;
- animation:floatUp linear forwards;
- text-shadow:0 0 12px #ff8bd4,0 0 25px #ac83ff;
+button { font:inherit; }
+button, a { -webkit-tap-highlight-color:transparent; }
+button {
+  border:1px solid rgba(255,180,225,.35);
+  background:linear-gradient(135deg,#ff8ecb,#b69aff);
+  color:#28112e;
+  padding:12px 19px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:transform .25s,filter .25s;
 }
-@keyframes floatUp{
- 0%{transform:translateY(0) rotate(0);opacity:0}
- 12%{opacity:.85}
- 85%{opacity:.7}
- 100%{transform:translateY(-115vh) rotate(330deg);opacity:0}
+button:hover { transform:translateY(-2px); filter:brightness(1.1); }
+button.secondary {
+  color:var(--text);
+  background:rgba(255,255,255,.07);
 }
-#lockMagic,#siteMagic{
- position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:1
+button:active { transform:scale(.97); }
+a { color:var(--pink); }
+.hidden { display:none!important; }
+section { padding:65px 18px; scroll-margin-top:70px; }
+.wrap { max-width:1000px; margin:auto; }
+.eyebrow {
+  color:var(--pink);
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:11px;
 }
-
-/* LOCK SCREEN */
-#birthdayLock{
- position:fixed;inset:0;z-index:9999;
- display:flex;align-items:center;justify-content:center;
- padding:16px;overflow:hidden;isolation:isolate;
- background:
- radial-gradient(ellipse at 50% 0%,#a44dba55,transparent 50%),
- radial-gradient(ellipse at 0% 100%,#ed78b833,transparent 45%),
- radial-gradient(ellipse at 100% 80%,#7958e744,transparent 45%),
- #10091e;
+h1,h2,h3 { line-height:1.25; }
+h1 { font-size:clamp(36px,8vw,72px); margin:15px 0; }
+h2 { font-size:clamp(28px,5vw,43px); margin:12px 0; }
+h3 { color:#ffd0e9; }
+p { line-height:1.85; color:var(--muted); }
+.center { text-align:center; }
+.card {
+  background:var(--panel);
+  border:1px solid rgba(255,180,225,.16);
+  border-radius:22px;
+  padding:24px;
+  box-shadow:0 12px 40px #0002;
+  backdrop-filter:blur(12px);
 }
-#birthdayLock.hidden{display:none}
-.lock-orb{
- position:absolute;width:260px;height:260px;border-radius:50%;
- filter:blur(75px);opacity:.3;pointer-events:none;
- animation:orb 12s ease-in-out infinite alternate
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));
+  gap:16px;
 }
-.lock-orb.one{background:#ff65c8;top:-100px;left:-100px}
-.lock-orb.two{background:#8963ff;right:-100px;bottom:-100px}
-@keyframes orb{to{transform:translate(45px,-25px) scale(1.2)}}
-
-.lock-card{
- position:relative;z-index:2;width:100%;max-width:490px;
- max-height:calc(100dvh - 32px);overflow-y:auto;
- text-align:center;padding:clamp(22px,5vw,34px);
- border:1px solid #ffd6f63d;border-radius:28px;
- background:linear-gradient(145deg,#30173de8,#160d2ae8);
- box-shadow:0 25px 100px #0008,0 0 45px #dc74ff16;
- backdrop-filter:blur(20px)
+.pill {
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:30px;
+  color:#ffe2f2;
+  background:#ff8ecb19;
+  border:1px solid #ff8ecb35;
+  font-size:12px;
 }
-.lock-top,.eyebrow,.lock-date,.count-label{
- font:10px Arial,sans-serif;letter-spacing:2.5px;
- text-transform:uppercase;color:#edc9f1
+.gradient {
+  background:linear-gradient(100deg,#ff9ed4,#d4b3ff,#ffe1a8);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
-.lock-heart{
- font-size:65px;line-height:1.3;color:#ff9edc;
- text-shadow:0 0 22px #ff6fc4;
- animation:heartBeat 1.8s infinite
+hr { border:0; border-top:1px solid #ffffff18; margin:24px 0; }
+#particles {
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  overflow:hidden;
 }
-@keyframes heartBeat{
- 0%,100%{transform:scale(1)}
- 12%,36%{transform:scale(1.1)}
- 24%{transform:scale(1)}
+.particle {
+  position:absolute;
+  bottom:-30px;
+  animation:floatUp linear forwards;
+  opacity:.8;
+  text-shadow:0 0 12px #ff8ecb;
 }
-.lock-title{
- font-size:clamp(40px,9vw,58px);font-weight:normal;
- line-height:1.05;margin:10px 0 14px
+@keyframes floatUp {
+  to { transform:translateY(-115vh) rotate(300deg); opacity:0; }
 }
-.lock-title span{
- display:block;color:var(--pink);
- text-shadow:0 0 30px #f67dd955
+@keyframes glow {
+  0%,100% { text-shadow:0 0 12px #ff8ecb55; }
+  50% { text-shadow:0 0 28px #ff8ecbaa; }
 }
-.lock-description{
- max-width:340px;margin:0 auto;color:#e5d5ee;
- font-size:15px;line-height:1.8
+@keyframes pulse {
+  0%,100% { transform:scale(1); }
+  50% { transform:scale(1.05); }
 }
-.divider{
- display:flex;justify-content:center;align-items:center;
- gap:12px;margin:22px;color:#ffd9f5
+@keyframes reveal {
+  from { opacity:0; transform:translateY(16px); }
+  to { opacity:1; transform:translateY(0); }
 }
-.divider i{
- width:42px;height:1px;
- background:linear-gradient(90deg,transparent,#f4a7e5,transparent)
+#birthdayLock {
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px 16px;
+  position:relative;
+  z-index:2;
 }
-.lock-date{margin-bottom:8px}
-.birthday-date{font-size:22px;letter-spacing:5px;font-weight:normal;margin:0 0 20px}
-#lockCountdown{
- display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
- gap:8px;margin:12px 0 22px
+.lock-card {
+  width:min(680px,100%);
+  text-align:center;
+  padding:clamp(24px,6vw,55px);
+  border:1px solid #ffb9e83c;
+  border-radius:30px;
+  background:rgba(18,9,30,.88);
+  box-shadow:0 0 80px #d65bb21c;
 }
-.time-box{
- padding:13px 3px;border:1px solid #ffc8ee2c;
- background:#ffffff08;border-radius:13px
+.lock-icon { font-size:50px; animation:pulse 3s infinite; }
+.countdown {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  margin:26px 0;
 }
-.time-box strong{
- display:block;font:clamp(22px,5vw,30px) Arial,sans-serif;
- color:#fff2ff;font-weight:normal;font-variant-numeric:tabular-nums
+.timebox {
+  background:#ffffff0a;
+  border:1px solid #ffffff16;
+  padding:15px 4px;
+  border-radius:15px;
 }
-.time-box small{
- display:block;font:9px Arial,sans-serif;
- letter-spacing:1px;color:#d8b6e6;margin-top:6px
+.timebox strong { display:block; font-size:clamp(24px,6vw,36px); color:#ffb7e0; }
+.timebox span { font-size:10px; letter-spacing:1px; color:var(--muted); }
+.music-panel {
+  margin-top:22px;
+  padding:17px;
+  border-radius:18px;
+  background:#ffffff09;
+  border:1px solid #ffffff17;
 }
-
-/* MUSIC PLAYER WORKS EVEN WHILE LOCKED */
-.music-player{
- display:flex;align-items:center;gap:12px;text-align:left;
- padding:12px;border-radius:16px;border:1px solid #ffc7ec35;
- background:#ffffff0a
+nav {
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:#10091beF;
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #ffffff16;
 }
-.music-art{
- width:44px;height:44px;flex-shrink:0;display:grid;place-items:center;
- border-radius:13px;background:linear-gradient(135deg,#ff9bd7,#9e81ff);
- color:#27112e;font-size:25px
+.nav-inner {
+  max-width:1000px;
+  margin:auto;
+  padding:12px 15px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
 }
-.music-info{flex:1;min-width:0}
-.music-info strong{display:block;font-size:13px;font-weight:normal}
-.music-info span{display:block;font:10px Arial,sans-serif;color:#cdb5dc;margin-top:5px;overflow-wrap:anywhere}
-.play-button{
- border:0;background:#ffb5e5;color:#29122d;border-radius:50%;
- width:42px;height:42px;flex-shrink:0;font-family:Arial,sans-serif
+.brand { color:#ffd0e9; font-weight:bold; }
+.nav-links { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
+.nav-links a {
+  font-size:12px;
+  text-decoration:none;
+  color:#e8d9ee;
+  padding:6px 8px;
 }
-#musicStatus{font:11px Arial,sans-serif;color:#d8c0e5;min-height:15px;margin:10px 0 15px}
-.lock-message{font-size:13px;color:#e8c9ef;line-height:1.6;font-style:italic}
-.lock-footer{font:9px Arial,sans-serif;letter-spacing:2px;color:#bd9fcf;margin-top:22px}
-
-/* MAIN WEBSITE */
-#mainSite{position:relative;z-index:2}
-nav{
- position:sticky;top:0;z-index:10;display:flex;gap:10px;
- align-items:center;justify-content:center;flex-wrap:wrap;
- padding:13px;background:#12091eea;border-bottom:1px solid #ffffff12;
- backdrop-filter:blur(15px)
+.nav-links a:hover { color:var(--pink); }
+.hero {
+  min-height:75vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:65px 20px;
+  position:relative;
 }
-nav a{font:11px Arial,sans-serif;color:#f0d8f3;padding:6px}
-.brand{font-size:17px;color:var(--pink)}
-.music-nav,.btn{
- display:inline-block;padding:12px 19px;border:1px solid #ffb9e577;
- border-radius:999px;color:#fff4ff;
- background:linear-gradient(120deg,#f18bc52b,#a88aff22);
- text-decoration:none;margin:5px
+.hero-inner { max-width:800px; animation:reveal 1s both; }
+.hero-heart { font-size:45px; animation:glow 3s infinite; }
+.quote-mark { font-size:35px; color:var(--pink); }
+.quote-text { font-size:clamp(19px,4vw,26px); line-height:1.8; color:#ffe5f4; }
+.quote-author { color:var(--pink); font-size:13px; }
+.small-note { font-size:12px; color:#bba8c8; }
+.photo {
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  border-radius:14px;
+  background:#24152f;
 }
-.hero{
- min-height:85vh;display:grid;place-items:center;text-align:center;
- padding:70px 20px;position:relative
+.memory-card { overflow:hidden; }
+.memory-card p { margin-bottom:0; }
+.reason {
+  padding:13px 15px;
+  border-radius:14px;
+  background:#ffffff08;
+  border:1px solid #ffffff12;
+  color:#f8d8ed;
+  line-height:1.7;
 }
-.hero-inner{max-width:850px}
-.kicker{font:11px Arial,sans-serif;letter-spacing:4px;color:var(--pink)}
-.hero h1{font-size:clamp(46px,10vw,100px);font-weight:normal;line-height:1;margin:25px 0}
-.hero h1 span{display:block;color:var(--pink)}
-.hero p{max-width:600px;margin:25px auto;color:#e1cfe9;font-size:17px;line-height:1.8}
-section{max-width:1050px;margin:auto;padding:60px 20px;scroll-margin-top:70px}
-.heading{text-align:center;margin-bottom:28px}
-.heading small{font:10px Arial,sans-serif;letter-spacing:3px;color:var(--pink)}
-.heading h2{font-size:clamp(30px,6vw,46px);font-weight:normal;margin:12px 0}
-.heading p{color:#d7c2e2;line-height:1.7}
-.card{
- background:var(--glass);border:1px solid #ffffff20;
- border-radius:22px;padding:24px;backdrop-filter:blur(10px)
+.reason b { color:var(--pink); margin-right:7px; }
+.big-number { font-size:44px; color:var(--pink); }
+.letter { white-space:pre-line; line-height:2; color:#f6dfee; }
+.message-box {
+  min-height:115px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  line-height:1.9;
+  color:#ffe3f3;
+  font-size:19px;
 }
-.center{text-align:center}
-.note{font-size:17px;line-height:1.9;color:#f1dfef}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:15px}
-.memory{padding:0;overflow:hidden}
-.memory img,.memory video{width:100%;height:260px;object-fit:cover;display:block;background:#21122d}
-.memory figcaption{padding:12px;font-size:13px;color:#e8d1ee}
-.memory-placeholder{height:180px;display:grid;place-items:center;font-size:38px;color:var(--pink)}
-.letter{
- max-width:750px;margin:auto;background:#fff0f8;color:#41254a;
- padding:clamp(24px,6vw,45px);border-radius:8px;line-height:1.9
+.progress {
+  height:6px;
+  background:#ffffff13;
+  border-radius:10px;
+  overflow:hidden;
+  margin:15px 0;
 }
-.letter h3{text-align:center;font-size:30px;font-weight:normal;color:#9d4586}
-.gift{width:100%;min-height:130px;border:1px solid #ffb6e533;background:#ffffff08;border-radius:17px;color:white;padding:18px}
-.gift span{display:block;font-size:32px;margin-bottom:10px}
-.result{color:#ffc5e9;line-height:1.7;min-height:24px}
-footer{text-align:center;padding:45px 15px;color:#bda3ce;font:10px Arial,sans-serif;letter-spacing:2px}
-@media(max-width:600px){
- nav{gap:3px;padding:8px 5px}nav a{font-size:10px;padding:5px}
- .brand{width:100%;text-align:center}
- .hero{min-height:75vh}
- .hero p{font-size:15px}
- .memory img,.memory video{height:230px}
- .lock-card{border-radius:23px}
+.progress div {
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#ff8ecb,#b69aff);
+  transition:width .3s;
 }
-@media(prefers-reduced-motion:reduce){
- *,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important}
+footer { padding:45px 18px; text-align:center; border-top:1px solid #ffffff12; }
+#toast {
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:20;
+  width:max-content;
+  max-width:90%;
+  background:#2a1738;
+  color:#fff1fa;
+  border:1px solid #ff9ed455;
+  padding:13px 18px;
+  border-radius:15px;
+  display:none;
+  box-shadow:0 8px 30px #0005;
+}
+#toast.show { display:block; animation:reveal .3s both; }
+#mainSite { position:relative; z-index:2; }
+#quoteCounter { color:var(--muted); font-size:12px; }
+#quoteSearch {
+  width:100%;
+  background:#ffffff09;
+  color:white;
+  border:1px solid #ffffff22;
+  border-radius:25px;
+  padding:13px 17px;
+  margin:10px 0 20px;
+}
+#quoteSearch::placeholder { color:#bba8c8; }
+input[type="text"] { font:inherit; }
+#garden {
+  min-height:150px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  font-size:30px;
+}
+.garden-flower { animation:reveal .5s both; }
+footer p { font-size:13px; }
+@media(max-width:600px) {
+  .nav-inner { flex-direction:column; }
+  .nav-links { gap:3px; }
+  .nav-links a { font-size:11px; }
+  section { padding:48px 15px; }
+  .card { padding:19px; }
+  .photo { height:190px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:.01ms!important; scroll-behavior:auto!important; }
 }
 </style>
 </head>
 
 <body>
-<div id="siteMagic"></div>
+<div id="particles" aria-hidden="true"></div>
 
-<!-- BEAUTIFUL LOCK SCREEN -->
-<div id="birthdayLock">
- <div id="lockMagic"></div>
- <div class="lock-orb one"></div><div class="lock-orb two"></div>
-
- <div class="lock-card">
-  <div class="lock-top">✦ A LITTLE UNIVERSE MADE FOR YOU ✦</div>
-  <div class="lock-heart">♡</div>
-  <p class="eyebrow">Someone special is waiting for a special day</p>
-  <h1 class="lock-title">For <span>Khusssss</span></h1>
-  <p class="lock-description">A thousand little stars, a million little wishes, and all my love are waiting here just for you.</p>
-  <div class="divider"><span>✧</span><i></i><span>♡</span><i></i><span>✧</span></div>
-  <p class="lock-date">YOUR MAGIC DAY</p>
-  <h2 class="birthday-date">04 · 06 · 2027</h2>
-  <div class="count-label">YOUR BIRTHDAY BEGINS IN</div>
-  <div id="lockCountdown">
-   <div class="time-box"><strong id="days">000</strong><small>DAYS</small></div>
-   <div class="time-box"><strong id="hours">00</strong><small>HOURS</small></div>
-   <div class="time-box"><strong id="minutes">00</strong><small>MINS</small></div>
-   <div class="time-box"><strong id="seconds">00</strong><small>SECS</small></div>
-  </div>
-
-  <div class="music-player">
-   <div class="music-art">♫</div>
-   <div class="music-info"><strong>A little song for you</strong><span>Song22.mp3 · Birthday soundtrack</span></div>
-   <button class="play-button" id="lockPlay" aria-label="Play or pause song">▶</button>
-  </div>
-  <p id="musicStatus">Tap play to listen before the birthday ♡</p>
-  <p class="lock-message">Your birthday universe is waiting to bloom. ✧</p>
-  <div class="lock-footer">MADE WITH LOVE · FOREVER YOURS ♡</div>
- </div>
-</div>
-
-<!-- Keep this audio element outside the lock so the song works before and after unlock. -->
+<!-- MUSIC IS OUTSIDE THE LOCK: IT CAN BE PLAYED BEFORE AND AFTER HER BIRTHDAY -->
 <audio id="birthdaySong" src="Song22.mp3" loop preload="metadata"></audio>
 
-<!-- MAIN WEBSITE: shown automatically on 4 June 2027 -->
-<div id="mainSite" class="hidden">
- <nav>
-  <span class="brand">♡ Khusssss</span>
-  <a href="#home">Home</a><a href="#memories">Memories</a><a href="#letter">Letter</a><a href="#gifts">Gifts</a><a href="#games">Fun</a>
-  <button class="music-nav" id="mainPlay">♫ Music</button>
- </nav>
+<div id="birthdayLock">
+  <div class="lock-card">
+    <div class="lock-icon">♡</div>
+    <div class="eyebrow">A little universe made for you</div>
+    <h1 class="gradient">For My Khusssss</h1>
+    <p>
+      Someone who means more than words can explain deserves something
+      made with all the love in the world.
+    </p>
+    <div class="pill">A special day is waiting ✧</div>
 
- <header class="hero" id="home">
-  <div class="hero-inner">
-   <div class="kicker">✦ TODAY, THE UNIVERSE CELEBRATES YOU ✦</div>
-   <h1>Happy Birthday <span>Khusssss</span></h1>
-   <p>This little universe is made of memories, tiny surprises, warm wishes, and a whole lot of love. Every star here is cheering for you.</p>
-   <a class="btn" href="#letter">Open your letter ♡</a>
-   <a class="btn" href="#gifts">Explore your surprises ✧</a>
+    <div class="countdown" id="countdown">
+      <div class="timebox"><strong id="days">000</strong><span>DAYS</span></div>
+      <div class="timebox"><strong id="hours">00</strong><span>HOURS</span></div>
+      <div class="timebox"><strong id="minutes">00</strong><span>MINUTES</span></div>
+      <div class="timebox"><strong id="seconds">00</strong><span>SECONDS</span></div>
+    </div>
+
+    <p id="lockMessage">Your birthday world will open on 4 June 2027. 💗</p>
+
+    <div class="music-panel">
+      <div class="eyebrow">Your little soundtrack</div>
+      <p style="margin:8px 0">A song for you, whenever you want to listen.</p>
+      <button id="lockPlay" onclick="toggleMusic()">▶ Play Song</button>
+      <p class="small-note">Tap play to start the music. Your browser may not allow automatic playback.</p>
+    </div>
   </div>
- </header>
-
- <section>
-  <div class="heading"><small>A LITTLE REMINDER</small><h2>You Are So Loved</h2></div>
-  <div class="card center note">Khusssss, I hope this new year of your life brings you peace when you need it, courage when things feel difficult, laughter that makes your cheeks hurt, and beautiful moments you will remember forever. Never forget how special you are. ♡</div>
- </section>
-
- <section id="memories">
-  <div class="heading"><small>LITTLE PIECES OF FOREVER</small><h2>Our Memory Gallery</h2><p>Photos K1.jpg to K10.jpg and K12.jpg, plus video K11.mp4.</p></div>
-  <div class="grid" id="gallery"></div>
- </section>
-
- <section>
-  <div class="heading"><small>A STORY STILL BEING WRITTEN</small><h2>Our Little Timeline</h2></div>
-  <div class="grid">
-   <div class="card"><h3>🌷 The beginning</h3><p>Every lovely story has a first page. This is one I will always be glad to have.</p></div>
-   <div class="card"><h3>✨ The little moments</h3><p>The laughs, the conversations, the silly things, and the memories that quietly matter most.</p></div>
-   <div class="card"><h3>🌙 Everything to come</h3><p>More adventures, more smiles, more photographs, and more reasons to celebrate you.</p></div>
-  </div>
- </section>
-
- <section id="letter">
-  <div class="heading"><small>OPEN WHEN YOU NEED A SMILE</small><h2>A Letter For You</h2></div>
-  <div class="letter">
-   <h3>Dear Khusssss ♡</h3>
-   <p>Happy Birthday to someone who deserves all the beautiful things this world can offer.</p>
-   <p>I made this little website so you could have a place full of stars, memories, and reminders that you matter. It may be made from code, but every little detail is here to make your day feel special.</p>
-   <p>I hope you keep choosing happiness, keep believing in yourself, and never stop dreaming big. May your heart feel lighter, your days feel brighter, and your future bring you more than you ever expected.</p>
-   <p>Whenever you visit this page, remember: you are appreciated, you are important, and you deserve to be celebrated—not just today, but all year long.</p>
-   <p style="text-align:right">With lots of love,<br><strong>Always ♡</strong></p>
-  </div>
- </section>
-
- <section id="gifts">
-  <div class="heading"><small>A FEW TINY TREASURES</small><h2>Your Surprise Boxes</h2><p>Tap a box to reveal its message.</p></div>
-  <div class="grid">
-   <button class="gift" data-message="May good news find you, kind people stay near you, and happy moments surprise you."><span>🎁</span>Gift 01<br><small>A little surprise</small></button>
-   <button class="gift" data-message="May you trust yourself enough to begin, and be proud of yourself for trying."><span>💌</span>Gift 02<br><small>A note just for you</small></button>
-   <button class="gift" data-message="May your days be full of jokes, unforgettable stories, and people who make you feel at home."><span>🌷</span>Gift 03<br><small>A flower made of words</small></button>
-   <button class="gift" data-message="May the things you work for slowly become the life you once imagined."><span>🌟</span>Gift 04<br><small>A star for your future</small></button>
-   <button class="gift" data-message="May you rest without guilt, breathe without worry, and remember you do not have to do everything at once."><span>🌙</span>Gift 05<br><small>A little calm</small></button>
-   <button class="gift" data-message="May you always be surrounded by people who respect your heart and celebrate the real you."><span>💗</span>Gift 06<br><small>A heartful wish</small></button>
-   <button class="gift" data-message="May this be a year of new chapters, brave choices, good health, and moments that make you glad to be alive."><span>🗝️</span>Gift 07<br><small>The final treasure</small></button>
-  </div>
-  <div class="card center" style="margin-top:15px"><p id="giftResult" class="result">Your surprise will appear here ♡</p></div>
- </section>
-
- <section id="games">
-  <div class="heading"><small>A TINY BIRTHDAY PLAYGROUND</small><h2>Let's Have Some Fun</h2></div>
-  <div class="grid">
-   <div class="card center"><div style="font-size:48px" id="cake">🎂</div><h3>Make a Wish</h3><p>Make a wish and blow out the virtual candle.</p><button class="btn" id="blowCandle">Blow the candle ✨</button><p class="result" id="candleResult"></p></div>
-   <div class="card center"><div style="font-size:42px">💗</div><h3>Sister Quiz</h3><p>What does your birthday deserve most?</p><button class="btn quiz">Happiness</button><button class="btn quiz">Adventure</button><button class="btn quiz">Love</button><p class="result" id="quizResult"></p></div>
-   <div class="card center"><div style="font-size:42px">🔮</div><h3>Future Fortune</h3><p>Tap to reveal a tiny prediction.</p><button class="btn" id="fortune">Reveal my fortune</button><p class="result" id="fortuneResult"></p></div>
-   <div class="card center"><div style="font-size:42px">🫂</div><h3>Virtual Hug</h3><p>A little warmth through the screen.</p><button class="btn" id="hug">Send a hug ♡</button><p class="result" id="hugResult"></p></div>
-  </div>
- </section>
-
- <section id="wishes">
-  <div class="heading"><small>PUT A LITTLE HOPE INTO THE UNIVERSE</small><h2>The Wish Jar</h2></div>
-  <div class="card center"><div style="font-size:60px">🏺</div>
-   <form id="wishForm"><input id="wishInput" maxlength="180" required placeholder="Write a wish for this new year..." style="width:min(100%,480px);padding:13px;border-radius:12px;border:1px solid #ffffff25;background:#130b20;color:white"><button class="btn">Add my wish ✧</button></form>
-   <p class="result" id="wishResult"></p><div id="wishWall"></div>
-  </div>
- </section>
-
- <section id="reasons">
-  <div class="heading"><small>A FEW REMINDERS</small><h2>Reasons You Are Wonderful</h2></div>
-  <div class="card center"><div id="reasonNumber" style="font-size:45px;color:var(--pink)">01</div><p class="note" id="reasonText">Your presence can make an ordinary day feel special.</p><button class="btn" id="nextReason">Another reason ♡</button><p id="reasonCounter" class="result">1 OF 50</p></div>
- </section>
-
- <section>
-  <div class="heading"><small>A GARDEN THAT NEVER FADES</small><h2>Birthday Garden</h2></div>
-  <div class="card center"><div id="flowers" style="font-size:35px;line-height:1.9">🌱</div><button class="btn" id="growFlower">Plant a flower 🌷</button><p class="result" id="flowerResult">Your garden is ready to grow.</p></div>
- </section>
-
- <section>
-  <div class="heading"><small>ONE LAST THING</small><h2>Your Universe, Always</h2></div>
-  <div class="card center"><div style="font-size:65px">🌌</div><p class="note">Somewhere in this huge universe, there is a little page made especially to celebrate you.</p><button class="btn" id="finale">Fill the sky with stars ✨</button><p class="result" id="finaleResult"></p></div>
- </section>
-
- <footer>MADE WITH LOVE FOR KHUSSSSS · HAPPY BIRTHDAY ♡</footer>
 </div>
 
+<div id="mainSite" class="hidden">
+  <nav>
+    <div class="nav-inner">
+      <div class="brand">♡ For Khusssss</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#wishes">Wishes</a>
+        <a href="#quotes">Quotes</a>
+        <a href="#memories">Memories</a>
+        <a href="#letter">Letter</a>
+        <a href="#reasons">Reasons</a>
+        <a href="#surprises">Surprises</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-heart">♡ ✧ ♡</div>
+      <div class="eyebrow">4 June 2027 · Your day · Your universe</div>
+      <h1>Happy Birthday,<br><span class="gradient">Khusssss</span></h1>
+      <p style="font-size:18px">
+        To my sister, my forever person, my favourite kind of blessing.
+        This little universe is yours.
+      </p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:25px">
+        <a href="#letter"><button>Read Your Letter ♡</button></a>
+        <a href="#quotes"><button class="secondary">Open Sister Quotes ✧</button></a>
+      </div>
+      <p class="small-note">Made with love, just for you.</p>
+    </div>
+  </header>
+
+  <section id="birthdayWishes">
+    <div class="wrap center">
+      <div class="eyebrow">A wish for your new chapter</div>
+      <h2>May life be <span class="gradient">beautiful to you</span></h2>
+      <div class="card">
+        <div class="quote-mark">“</div>
+        <p class="quote-text">
+          May you always find reasons to smile, courage when life gets difficult,
+          people who value your heart, and happiness that stays long after
+          the birthday candles have gone out.
+        </p>
+        <p class="quote-author">— With love, for my sister</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="wishes">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">Thirty little wishes</div>
+        <h2>30 Wishes for <span class="gradient">My Sister</span></h2>
+        <p>Every wish is a tiny reminder that you deserve good things.</p>
+      </div>
+      <div class="grid" id="wishGrid"></div>
+    </div>
+  </section>
+
+  <section id="quotes">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">Words from the heart</div>
+        <h2>Our <span class="gradient">Sisterhood Library</span></h2>
+        <p>Explore 100 sister quotes, and discover a new one whenever you like.</p>
+      </div>
+
+      <div class="card center" style="margin-bottom:25px">
+        <div class="quote-mark">“</div>
+        <div class="message-box" id="randomQuote" aria-live="polite">
+          A sister is a little piece of home you can carry everywhere.
+        </div>
+        <p class="quote-author" id="quoteAuthor">A note from the heart</p>
+        <p id="quoteCounter">Quote 1 of 100</p>
+        <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap">
+          <button onclick="newQuote()">New Quote ✧</button>
+          <button class="secondary" onclick="copyQuote()">Copy Quote</button>
+        </div>
+      </div>
+
+      <input id="quoteSearch" type="text" placeholder="Search sister quotes..." aria-label="Search sister quotes">
+      <div class="grid" id="quoteGrid"></div>
+      <div class="center" style="margin-top:22px">
+        <button class="secondary" id="moreQuotes" onclick="showMoreQuotes()">Show More Quotes</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="memories">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">Little pieces of our story</div>
+        <h2>Our <span class="gradient">Memory Gallery</span></h2>
+        <p>Keep your favourite pictures in the same folder as this website.</p>
+      </div>
+      <div class="grid" id="gallery"></div>
+      <div class="card center" style="margin-top:20px">
+        <h3>Our moments, our story</h3>
+        <p>
+          Some memories become photographs. Others stay in the heart.
+          Both are precious, and both remind us of the people who make
+          ordinary days feel special.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">A bond that keeps growing</div>
+        <h2>A Little <span class="gradient">Sister Timeline</span></h2>
+      </div>
+      <div class="grid">
+        <div class="card"><span class="pill">Chapter 01</span><h3>Where it begins</h3><p>A family, a bond, and a connection that is special in its own way.</p></div>
+        <div class="card"><span class="pill">Chapter 02</span><h3>The little moments</h3><p>The conversations, laughter, silly things, and memories that make life warmer.</p></div>
+        <div class="card"><span class="pill">Chapter 03</span><h3>Growing together</h3><p>Different days and different dreams, but a bond that continues to matter.</p></div>
+        <div class="card"><span class="pill">Chapter 04</span><h3>Always family</h3><p>Wherever life takes us, you will always have a place in my heart.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="letter">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">Please read this slowly</div>
+        <h2>A Letter <span class="gradient">Just for You</span></h2>
+      </div>
+      <div class="card">
+        <p class="letter">Dear Khusssss,
+
+Happy Birthday to one of the most special people in my life.
+
+I hope you know that you are loved for much more than the things you do. You are valuable simply because you are you. You do not have to be perfect, make everyone happy, or have every part of life figured out to deserve kindness and happiness.
+
+I wish you a life filled with peaceful mornings, genuine smiles, beautiful surprises, meaningful friendships, and dreams that slowly become real. When life gets difficult, I hope you remember how strong you are. When you feel uncertain, I hope you give yourself the same patience you would give someone you love.
+
+Thank you for being my sister. No birthday message could ever explain every little thing that makes our bond special. But I hope this website reminds you that someone took time to make something just for you, because you matter.
+
+Please keep smiling, keep dreaming, and keep being your own beautiful self. May the world give you more reasons to laugh than reasons to worry.
+
+And no matter how much life changes, I hope we always find our way back to laughter, care, and family.
+
+Happy Birthday, Khusssss. May this new year of your life be gentle with your heart and generous with your dreams.
+
+With lots of love,
+Your sibling ♡</p>
+        <hr>
+        <p class="center">“You will never need to earn your place in my heart. You already have one.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reasons">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">A hundred little reminders</div>
+        <h2>100 Reasons <span class="gradient">You're Special</span></h2>
+        <p>Not a list of expectations. Just reminders of how much a sister can mean.</p>
+      </div>
+      <div class="grid" id="reasonGrid"></div>
+    </div>
+  </section>
+
+  <section id="promises">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">A promise from the heart</div>
+        <h2>Things I Hope <span class="gradient">You Always Know</span></h2>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>♡ You can be yourself</h3><p>You don't have to pretend to be strong every second. Your feelings matter, too.</p></div>
+        <div class="card"><h3>♡ Your dreams matter</h3><p>Your ambitions deserve room to grow, even when the path takes time.</p></div>
+        <div class="card"><h3>♡ You deserve respect</h3><p>You deserve people who listen, care, and treat you with kindness.</p></div>
+        <div class="card"><h3>♡ You are not alone</h3><p>On difficult days, remember that asking for support is a strength.</p></div>
+        <div class="card"><h3>♡ Keep your own light</h3><p>Never feel that you need to become someone else to be worthy of love.</p></div>
+        <div class="card"><h3>♡ You are loved</h3><p>Even ordinary days are better because you are part of our family.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="surprises">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">Tap, discover, smile</div>
+        <h2>Little <span class="gradient">Birthday Surprises</span></h2>
+        <p>Every button hides a little something for you.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card center">
+          <div class="big-number">01</div><h3>A secret message</h3>
+          <p id="secretMessage">There's something waiting here.</p>
+          <button onclick="revealSecret()">Reveal Message ♡</button>
+        </div>
+        <div class="card center">
+          <div class="big-number">02</div><h3>A virtual hug</h3>
+          <p id="hugMessage">Ready for a little hug?</p>
+          <button onclick="virtualHug()">Send a Hug 🤗</button>
+        </div>
+        <div class="card center">
+          <div class="big-number">03</div><h3>Your birthday fortune</h3>
+          <p id="fortuneMessage">Your next little surprise is waiting.</p>
+          <button onclick="fortune()">Read Your Fortune ✨</button>
+        </div>
+        <div class="card center">
+          <div class="big-number">04</div><h3>Make a wish</h3>
+          <p>Think of a wish, then add a flower to your birthday garden.</p>
+          <button onclick="plantFlower()">Plant a Flower 🌸</button>
+        </div>
+      </div>
+      <div class="card center" style="margin-top:20px">
+        <h3>Your Birthday Garden</h3>
+        <p>Every flower represents a wish for your happiness.</p>
+        <div id="garden"><span class="small-note">Your garden is waiting for its first flower.</span></div>
+        <p id="flowerCount">Flowers planted: 0</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="finale">
+    <div class="wrap center">
+      <div class="hero-heart">♡ ✧ ♡</div>
+      <div class="eyebrow">One last thing</div>
+      <h2>You Will Always Be <span class="gradient">Special</span></h2>
+      <div class="card">
+        <p class="quote-text">
+          “The world may change, years may pass, and life may take us in
+          different directions. But the love we have for our family will
+          always be a beautiful part of who we are.”
+        </p>
+        <p>Happy Birthday, Khusssss. Keep this little universe close to your heart. ♡</p>
+        <button onclick="celebrate()">Celebrate Again ✨</button>
+      </div>
+      <div class="music-panel">
+        <p>Want to listen to your song again?</p>
+        <button id="mainPlay" onclick="toggleMusic()">▶ Play Song</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="hero-heart">♡</div>
+    <p>Made with love for Khusssss</p>
+    <p>4 June 2027 · A little universe, made just for you.</p>
+    <p class="small-note">May your days be kind, your dreams be bright, and your heart be happy.</p>
+  </footer>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
 <script>
-(() => {
- const birthday = new Date("2027-06-04T00:00:00+05:30");
- const lock = document.getElementById("birthdayLock");
- const main = document.getElementById("mainSite");
- const song = document.getElementById("birthdaySong");
- const status = document.getElementById("musicStatus");
- const lockPlay = document.getElementById("lockPlay");
- const mainPlay = document.getElementById("mainPlay");
+"use strict";
 
- // Music is NOT tied to the countdown or lock. It works at all times.
- async function toggleMusic() {
-   try {
-     if (song.paused) {
-       await song.play();
-       status.textContent = "Playing your birthday song ♡";
-     } else {
-       song.pause();
-       status.textContent = "Paused — play whenever you like ♡";
-     }
-   } catch (e) {
-     status.textContent = "Please upload Song22.mp3 beside index.html.";
-   }
- }
- lockPlay.addEventListener("click", toggleMusic);
- mainPlay.addEventListener("click", toggleMusic);
- function updateMusicButtons() {
-   const playing = !song.paused;
-   lockPlay.textContent = playing ? "Ⅱ" : "▶";
-   mainPlay.textContent = playing ? "♫ Pause" : "♫ Music";
- }
- song.addEventListener("play", updateMusicButtons);
- song.addEventListener("pause", updateMusicButtons);
- song.addEventListener("error", () => status.textContent = "Song22.mp3 not found. Check the filename and folder.");
+/* BIRTHDAY DATE: 4 JUNE 2027, MIDNIGHT IN INDIA */
+const birthday = new Date("2027-06-04T00:00:00+05:30");
+const lock = document.getElementById("birthdayLock");
+const mainSite = document.getElementById("mainSite");
+const countdown = document.getElementById("countdown");
+const audio = document.getElementById("birthdaySong");
+let unlocked = false;
 
- function unlock() {
-   lock.classList.add("hidden");
-   main.classList.remove("hidden");
- }
- function countdown() {
-   const diff = birthday.getTime() - Date.now();
-   if (diff <= 0) {
-     unlock();
-     return;
-   }
-   const total = Math.floor(diff / 1000);
-   document.getElementById("days").textContent = String(Math.floor(total / 86400)).padStart(3,"0");
-   document.getElementById("hours").textContent = String(Math.floor(total % 86400 / 3600)).padStart(2,"0");
-   document.getElementById("minutes").textContent = String(Math.floor(total % 3600 / 60)).padStart(2,"0");
-   document.getElementById("seconds").textContent = String(total % 60).padStart(2,"0");
- }
- countdown();
- setInterval(countdown,1000);
+function updateCountdown() {
+  const remaining = birthday.getTime() - Date.now();
 
- // Hearts and sparkles continue on the lock screen and main site.
- function particle(layer) {
-   const p = document.createElement("span");
-   p.className = "particle";
-   p.textContent = ["♡","♥","✦","✧","⋆","✨","·"][Math.floor(Math.random()*7)];
-   p.style.left = Math.random()*100 + "%";
-   p.style.fontSize = (12 + Math.random()*18) + "px";
-   p.style.animationDuration = (8 + Math.random()*9) + "s";
-   p.style.color = ["#ffb9e7","#e2c9ff","#fff0c8","#ff8dcf"][Math.floor(Math.random()*4)];
-   layer.appendChild(p);
-   setTimeout(() => p.remove(),18000);
- }
- const lockMagic = document.getElementById("lockMagic");
- const siteMagic = document.getElementById("siteMagic");
- setInterval(() => particle(lockMagic),300);
- setInterval(() => { if (!main.classList.contains("hidden")) particle(siteMagic); },400);
+  if (remaining <= 0) {
+    unlockBirthday();
+    return;
+  }
 
- // Gallery media names match the files in the repository.
- const gallery = document.getElementById("gallery");
- const captions = ["A favourite little moment","A memory worth keeping","A page in our story","A smile to remember","One for the scrapbook","A little bit of forever","A moment full of warmth","Another lovely memory","A picture full of meaning","A little treasure","The final memory"];
- [...Array(10)].map((_,i)=>i+1).concat([12]).forEach(n => {
-   const fig = document.createElement("figure");
-   fig.className = "card memory";
-   const img = document.createElement("img");
-   img.src = `K${n}.jpg`;
-   img.alt = captions[n-1] || "Birthday memory";
-   img.loading = "lazy";
-   img.onerror = () => { fig.innerHTML = `<div class="memory-placeholder">♡</div><figcaption>Upload K${n}.jpg to show this memory</figcaption>`; };
-   const cap = document.createElement("figcaption");
-   cap.textContent = captions[n-1] || "A little memory";
-   fig.append(img,cap); gallery.appendChild(fig);
- });
- const video = document.createElement("figure");
- video.className = "card memory";
- video.innerHTML = '<video src="K11.mp4" controls preload="metadata"></video><figcaption>A moving memory — K11.mp4</figcaption>';
- gallery.appendChild(video);
+  const totalSeconds = Math.floor(remaining / 1000);
+  document.getElementById("days").textContent =
+    String(Math.floor(totalSeconds / 86400)).padStart(3, "0");
+  document.getElementById("hours").textContent =
+    String(Math.floor((totalSeconds % 86400) / 3600)).padStart(2, "0");
+  document.getElementById("minutes").textContent =
+    String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+  document.getElementById("seconds").textContent =
+    String(totalSeconds % 60).padStart(2, "0");
+}
 
- document.querySelectorAll(".gift").forEach(b => b.addEventListener("click", () => {
-   document.getElementById("giftResult").textContent = b.dataset.message;
- }));
- document.getElementById("blowCandle").addEventListener("click", () => {
-   document.getElementById("cake").textContent = "🍰";
-   document.getElementById("candleResult").textContent = "Wish sent to the universe. May it find its way to you. ♡";
- });
- document.querySelectorAll(".quiz").forEach(b => b.addEventListener("click", () => {
-   document.getElementById("quizResult").textContent = "Correct answer: ALL OF THEM. You deserve every good thing. ♡";
- }));
- const fortunes = [
-   "A lovely surprise may be closer than you think. ✨",
-   "You will find a reason to be proud of yourself.",
-   "A new memory is waiting to be made.",
-   "Keep going—your effort matters more than you know.",
-   "May the right doors open at the right time. ♡"
- ];
- document.getElementById("fortune").addEventListener("click", () => {
-   document.getElementById("fortuneResult").textContent = fortunes[Math.floor(Math.random()*fortunes.length)];
- });
- document.getElementById("hug").addEventListener("click", () => {
-   document.getElementById("hugResult").textContent = "♡ ♡ ♡ A giant virtual hug, wrapped in sparkles, is on its way! ♡ ♡ ♡";
- });
- document.getElementById("wishForm").addEventListener("submit", e => {
-   e.preventDefault();
-   const input = document.getElementById("wishInput");
-   const value = input.value.trim();
-   if (!value) return;
-   const item = document.createElement("div");
-   item.textContent = "✧ " + value;
-   item.style.cssText = "padding:12px;margin:9px 0;border-radius:12px;background:#ffffff0a;border:1px solid #ffffff12";
-   document.getElementById("wishWall").prepend(item);
-   document.getElementById("wishResult").textContent = "Your wish has been placed in the jar. ♡";
-   input.value = "";
- });
- const reasons = [
-  "Your presence can make an ordinary day feel special.","You deserve kindness even on difficult days.","Your laugh can brighten a room.","You are allowed to grow at your own pace.","Your dreams are worth taking seriously.",
-  "You have your own special way of seeing the world.","You can begin again whenever you need to.","Your feelings deserve to be heard.","You bring something unique to the people around you.","You deserve rest as much as success.",
-  "You are more than one bad day.","Your future is full of possibilities.","You can be brave and nervous at the same time.","You deserve people who celebrate your wins.","Your little efforts count.",
-  "You make memories that matter.","You are worthy of respect.","Your kindness is valuable.","You do not need to be perfect to be loved.","You deserve to feel proud of yourself.",
-  "You can learn from mistakes without becoming them.","Your ideas deserve space.","You can take life one step at a time.","Your smile is worth protecting.","You deserve safe and sincere friendships.",
-  "You can change your mind and keep growing.","You are allowed to ask for help.","Your story is still unfolding.","You have survived difficult days.","Your hopes are worth nurturing.",
-  "You deserve joy without having to earn it.","You can make a fresh start.","Your voice matters.","You have so much left to discover.","You deserve love that feels peaceful.",
-  "You can make small things beautiful.","Your curiosity can take you places.","You are not behind in your own story.","You can be proud of progress, not just results.","Your heart deserves gentleness.",
-  "You can choose what helps you grow.","You deserve to be listened to.","You have the power to make new memories.","Your presence matters more than you know.","You can be both strong and soft.",
-  "You deserve good surprises.","You are capable of learning new things.","There are still so many beautiful days ahead.","You are loved in ways you may not always see.","The world is better with your own kind of sparkle. ♡"
- ];
- let reasonIndex = 0;
- document.getElementById("nextReason").addEventListener("click", () => {
-   reasonIndex = (reasonIndex + 1) % reasons.length;
-   document.getElementById("reasonNumber").textContent = String(reasonIndex+1).padStart(2,"0");
-   document.getElementById("reasonText").textContent = reasons[reasonIndex];
-   document.getElementById("reasonCounter").textContent = `${reasonIndex+1} OF ${reasons.length}`;
- });
- let flowerCount = 0;
- const flowers = ["🌷","🌸","🌼","🌻","💐","🌺","🪻"];
- document.getElementById("growFlower").addEventListener("click", () => {
-   flowerCount++;
-   document.getElementById("flowers").textContent += " " + flowers[(flowerCount-1)%flowers.length];
-   document.getElementById("flowerResult").textContent = `${flowerCount} little flower${flowerCount===1?" has":"s have"} grown from your wishes.`;
- });
- document.getElementById("finale").addEventListener("click", () => {
-   for(let i=0;i<45;i++) setTimeout(()=>particle(main.classList.contains("hidden")?lockMagic:siteMagic),i*35);
-   document.getElementById("finaleResult").textContent = "The sky is full of stars, and every one sends you a little wish. Happy Birthday, Khusssss! ♡";
- });
-})();
+function unlockBirthday() {
+  if (unlocked) return;
+  unlocked = true;
+  lock.classList.add("hidden");
+  mainSite.classList.remove("hidden");
+  document.title = "Happy Birthday Khusssss ♡";
+  window.scrollTo(0, 0);
+  toast("Your birthday universe is open! ♡");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* MUSIC: AVAILABLE BOTH BEFORE AND AFTER UNLOCKING */
+async function toggleMusic() {
+  const buttons = [
+    document.getElementById("lockPlay"),
+    document.getElementById("mainPlay")
+  ];
+
+  if (audio.paused) {
+    try {
+      await audio.play();
+      buttons.forEach(b => { if (b) b.textContent = "❚❚ Pause Song"; });
+      toast("Your song is playing ♡");
+    } catch (error) {
+      toast("Couldn't play the song. Check that Song22.mp3 is uploaded correctly.");
+    }
+  } else {
+    audio.pause();
+    buttons.forEach(b => { if (b) b.textContent = "▶ Play Song"; });
+  }
+}
+audio.addEventListener("play", () => {
+  ["lockPlay","mainPlay"].forEach(id => {
+    const button = document.getElementById(id);
+    if (button) button.textContent = "❚❚ Pause Song";
+  });
+});
+audio.addEventListener("pause", () => {
+  ["lockPlay","mainPlay"].forEach(id => {
+    const button = document.getElementById(id);
+    if (button) button.textContent = "▶ Play Song";
+  });
+});
+
+/* FLOATING HEARTS AND SPARKLES */
+const particleLayer = document.getElementById("particles");
+const symbols = ["♡","✦","✧","⋆","♥","✩","·"];
+
+function makeParticle() {
+  if (document.hidden) return;
+  const particle = document.createElement("span");
+  particle.className = "particle";
+  particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+  particle.style.left = Math.random() * 100 + "%";
+  particle.style.fontSize = (10 + Math.random() * 18) + "px";
+  particle.style.animationDuration = (7 + Math.random() * 10) + "s";
+  particle.style.color = Math.random() > .5 ? "#ff9ed4" : "#d3b5ff";
+  particleLayer.appendChild(particle);
+  setTimeout(() => particle.remove(), 18000);
+}
+setInterval(makeParticle, 450);
+
+/* TOAST MESSAGE */
+let toastTimer;
+function toast(message) {
+  const box = document.getElementById("toast");
+  box.textContent = message;
+  box.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => box.classList.remove("show"), 2600);
+}
+
+/* 30 BIRTHDAY WISHES */
+const wishes = [
+  "May happiness find you in the smallest moments.",
+  "May your dreams become plans, and your plans become beautiful memories.",
+  "May you always have the courage to begin again.",
+  "May you find people who appreciate your beautiful heart.",
+  "May laughter visit your home every day.",
+  "May your confidence grow stronger with every new chapter.",
+  "May you discover new places and collect unforgettable memories.",
+  "May your hard work bring you opportunities you once only imagined.",
+  "May you never forget how much you are worth.",
+  "May peace find you on your busiest days.",
+  "May your future surprise you in the loveliest ways.",
+  "May you have the strength to leave behind what hurts you.",
+  "May you always feel safe being your true self.",
+  "May your smile return quickly after every difficult day.",
+  "May your goals feel closer with every step you take.",
+  "May you be surrounded by genuine love and loyalty.",
+  "May you find beauty in ordinary days.",
+  "May you always have a reason to be proud of yourself.",
+  "May every new beginning bring you hope.",
+  "May you keep your kindness without losing your boundaries.",
+  "May you laugh until your cheeks hurt.",
+  "May your health, peace, and happiness always matter.",
+  "May you be brave enough to follow your own path.",
+  "May your life be rich in love, not just things.",
+  "May you feel appreciated even when nobody says it aloud.",
+  "May your worries become lighter and your hopes become brighter.",
+  "May you always have a place where you feel at home.",
+  "May your future be filled with wonderful surprises.",
+  "May you continue to grow without losing your beautiful self.",
+  "May this year be one of your happiest chapters yet."
+];
+
+document.getElementById("wishGrid").innerHTML = wishes.map((wish,i) =>
+  `<article class="card"><span class="pill">Wish ${String(i+1).padStart(2,"0")}</span><p>${wish}</p></article>`
+).join("");
+
+/* 100 ORIGINAL SISTER QUOTES */
+const quotes = [
+"A sister is a little piece of home you can carry everywhere.",
+"Life gave me many blessings, and having you as my sister is one of them.",
+"A sister can make an ordinary day feel like a treasured memory.",
+"Some bonds need no explanation; sisterhood is one of them.",
+"A sister is a friend whose place in your story is forever special.",
+"Distance can change where we stand, but it cannot erase the love we share.",
+"A sister's happiness is a beautiful reason to smile.",
+"Home is not always a place; sometimes it is the people we love.",
+"A sister is part of your childhood and a blessing in your growing years.",
+"One of life's sweetest gifts is someone you can call your sister.",
+"A sister knows pieces of your story that the world may never hear.",
+"The best sisterhood is built with love, patience, laughter, and care.",
+"A sister makes family memories more colourful.",
+"Having a sister means having another heart to celebrate life's little joys.",
+"Some people make life brighter simply by being in it; you are one of them.",
+"A sister is a forever chapter in the book of your life.",
+"May our bond always be stronger than our misunderstandings.",
+"Growing older is easier when the love of family grows with you.",
+"A sister is a beautiful reminder that you never begin life alone.",
+"No perfect words can measure the value of a loving sister.",
+"A sister's smile can turn a difficult day into a softer one.",
+"Love makes a family, and care keeps its memories alive.",
+"Every sister has a special place no one else can fill.",
+"A sister is not just someone beside you, but someone you carry in your heart.",
+"May we always find a reason to laugh together.",
+"Some memories fade in detail but remain warm in the heart.",
+"A sister is a familiar voice in a world that keeps changing.",
+"The little things we share often become the memories we treasure most.",
+"Being sisters means having a bond that keeps finding new ways to grow.",
+"A sister deserves kindness on her birthday and on every ordinary day.",
+"Family is one of life's quietest and strongest blessings.",
+"A sister is a friend made special by a shared story.",
+"May your life always return the kindness you give to others.",
+"A loving sister is a treasure that cannot be measured in money.",
+"Your dreams matter, your voice matters, and your happiness matters.",
+"A sister should never have to hide her tears to prove her strength.",
+"May you always feel free to be your real, wonderful self.",
+"Your worth is not decided by anyone else's opinion.",
+"A sister's heart deserves the same care she gives to others.",
+"May you always find courage when the road becomes uncertain.",
+"Every new year of life is another chance to discover your strength.",
+"A sister can be both a familiar memory and a fresh inspiration.",
+"The best gifts are the people who make life meaningful.",
+"May your laughter stay loud and your worries become lighter.",
+"Even when we disagree, I hope our care for each other remains.",
+"A sister is part of the story that made you who you are.",
+"May we keep collecting moments worth remembering.",
+"Your presence adds something beautiful to our family.",
+"A sister's love is shown in little acts of care, not only big words.",
+"May you be proud of how far you have come.",
+"You deserve a life that feels peaceful as well as exciting.",
+"May you never shrink yourself to fit someone else's expectations.",
+"Your kindness is a strength, and your boundaries are important too.",
+"A sister is a reminder that love can grow through every season.",
+"May the future give you reasons to believe in yourself.",
+"The world is brighter when you allow your own light to shine.",
+"Your birthday celebrates not just another year, but the person you are becoming.",
+"May your courage be bigger than your fear.",
+"A sister deserves friendships that feel safe, honest, and joyful.",
+"May you never forget to celebrate your own progress.",
+"Small steps still take you toward beautiful places.",
+"A sister's dreams deserve encouragement, not limits.",
+"May life surprise you with the good you never saw coming.",
+"Your happiness is worth protecting.",
+"May you always know the difference between being needed and being valued.",
+"A sister is someone whose story will always matter to you.",
+"May you have the courage to choose what brings you peace.",
+"Even the quietest moments can become treasured memories.",
+"May your heart stay gentle and your spirit stay brave.",
+"Your future does not need to look like anyone else's to be wonderful.",
+"May you always find people who celebrate your success sincerely.",
+"A sister is a lovely part of the story we call family.",
+"May you keep learning, growing, laughing, and dreaming.",
+"Never forget that rest is allowed and asking for help is brave.",
+"May every difficult chapter teach you without defining you.",
+"A sister's birthday is a perfect moment to celebrate her whole self.",
+"May your days hold more genuine smiles than forced ones.",
+"May you find beauty in the person you are today.",
+"Your dreams are worth the patience it takes to reach them.",
+"A sister can be a memory keeper, a cheerleader, and a lifelong blessing.",
+"May you always have a reason to hope.",
+"May the people around you make you feel appreciated and understood.",
+"A sister's value does not depend on what she achieves.",
+"May you give yourself the same kindness you offer others.",
+"Every birthday is another page waiting for your own story.",
+"May your life be full of honest love and meaningful moments.",
+"May you never lose the little things that make you uniquely you.",
+"A sister deserves to feel celebrated even when it is not her birthday.",
+"May your heart find peace after every storm.",
+"Your laughter is a little gift to the people who love you.",
+"May you always have the freedom to grow into yourself.",
+"A sister is part of your roots and part of your memories.",
+"May your future be kinder than your fears predict.",
+"May you be surrounded by people who respect your boundaries.",
+"Some bonds become more meaningful with every year that passes.",
+"May your dreams stay alive even when progress feels slow.",
+"A sister is a blessing to appreciate, not a person to take for granted.",
+"May your birthday begin a year filled with hope, health, and happiness.",
+"No matter how much life changes, I hope you always know you are loved."
+];
+
+let quoteIndex = 0;
+let visibleQuotes = 12;
+
+function newQuote() {
+  quoteIndex = (quoteIndex + 1 + Math.floor(Math.random() * 9)) % quotes.length;
+  document.getElementById("randomQuote").textContent = "“" + quotes[quoteIndex] + "”";
+  document.getElementById("quoteAuthor").textContent = "For Khusssss ♡";
+  document.getElementById("quoteCounter").textContent =
+    `Quote ${quoteIndex + 1} of ${quotes.length}`;
+}
+
+function copyQuote() {
+  const text = document.getElementById("randomQuote").textContent;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text)
+      .then(() => toast("Quote copied ♡"))
+      .catch(() => toast(text));
+  } else {
+    toast(text);
+  }
+}
+
+function renderQuotes(filter = "") {
+  const grid = document.getElementById("quoteGrid");
+  const matches = quotes.map((q,i) => ({q,i}))
+    .filter(item => item.q.toLowerCase().includes(filter.toLowerCase()));
+  const shown = matches.slice(0, visibleQuotes);
+  grid.innerHTML = shown.map(item =>
+    `<article class="card"><span class="pill">Sister Quote ${item.i+1}</span><p>“${item.q}”</p><button class="secondary" onclick="copySpecificQuote(${item.i})">Copy Quote</button></article>`
+  ).join("");
+  document.getElementById("moreQuotes").style.display =
+    matches.length > visibleQuotes ? "inline-block" : "none";
+  if (!matches.length) grid.innerHTML = '<p class="center">No quotes found. Try another word.</p>';
+}
+
+function copySpecificQuote(index) {
+  const text = "“" + quotes[index] + "”";
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text)
+      .then(() => toast("Quote copied ♡"))
+      .catch(() => toast(text));
+  } else toast(text);
+}
+
+function showMoreQuotes() {
+  visibleQuotes += 12;
+  renderQuotes(document.getElementById("quoteSearch").value);
+}
+document.getElementById("quoteSearch").addEventListener("input", event => {
+  visibleQuotes = 12;
+  renderQuotes(event.target.value);
+});
+renderQuotes();
+
+/* PHOTO GALLERY: UPLOAD THESE FILES BESIDE index.html */
+const galleryItems = [
+  ["K1.jpg","A memory to keep"],
+  ["K2.jpg","A little piece of happiness"],
+  ["K3.jpg","One for the memories"],
+  ["K4.jpg","A moment worth saving"],
+  ["K5.jpg","Beautiful little things"],
+  ["K6.jpg","Our story in pictures"],
+  ["K7.jpg","A memory close to my heart"],
+  ["K8.jpg","Another lovely chapter"],
+  ["K9.jpg","Moments that matter"],
+  ["K10.jpg","A smile worth remembering"],
+  ["K12.jpg","A little reminder of love"]
+];
+
+document.getElementById("gallery").innerHTML = galleryItems.map(([src,caption]) => `
+  <article class="card memory-card">
+    <img class="photo" src="${src}" alt="${caption}" loading="lazy"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+    <div class="photo" style="display:none;place-items:center;color:#ffb7e0">Add ${src} to your repository</div>
+    <p>${caption}</p>
+  </article>
+`).join("") + `
+  <article class="card memory-card">
+    <video class="photo" controls preload="metadata" playsinline>
+      <source src="K11.mp4" type="video/mp4">
+      Your browser does not support this video.
+    </video>
+    <p>A moving memory, kept forever.</p>
+  </article>
+`;
+
+/* 100 REASONS: A MIX OF AFFECTION, ENCOURAGEMENT AND SISTERHOOD */
+const reasons = [
+"Your place in the family is unique.",
+"You deserve to be celebrated.",
+"Your dreams are worth taking seriously.",
+"You bring your own personality to every room.",
+"You are allowed to grow and change.",
+"Your feelings deserve to be heard.",
+"You deserve peaceful days.",
+"You deserve genuine friendships.",
+"You can learn from mistakes without being defined by them.",
+"You have a story that belongs to you.",
+"Your laughter can make moments memorable.",
+"You deserve to feel safe and respected.",
+"You do not have to be perfect.",
+"You can be proud of small progress.",
+"You deserve to be treated with kindness.",
+"You can take your time finding your path.",
+"Your ideas are worth sharing.",
+"You deserve opportunities to grow.",
+"You can ask for help when you need it.",
+"You have the right to say no.",
+"You deserve love that feels honest.",
+"You can begin again after a hard day.",
+"Your future is still full of possibilities.",
+"You deserve time to rest.",
+"You can choose what matters to you.",
+"You are allowed to celebrate yourself.",
+"You deserve people who listen.",
+"You can be brave and still feel afraid.",
+"You can change your mind as you learn.",
+"You deserve to be appreciated.",
+"Your happiness matters.",
+"You can build a life that feels right for you.",
+"You deserve respect in every relationship.",
+"You can learn new things at any age.",
+"You deserve to feel proud of your progress.",
+"You do not need to compare your journey.",
+"You can protect your peace.",
+"You deserve laughter and fun.",
+"You can make mistakes and keep growing.",
+"You deserve to be understood.",
+"You can follow your curiosity.",
+"You deserve to feel included.",
+"You can set healthy boundaries.",
+"You deserve encouragement.",
+"You can make meaningful memories.",
+"You have your own strengths.",
+"You can choose hope during uncertainty.",
+"You deserve kindness from yourself, too.",
+"You can keep your individuality.",
+"You deserve a future you look forward to.",
+"You are part of our family's story.",
+"You can take one step at a time.",
+"You deserve to feel seen.",
+"You can stand up for what matters.",
+"You deserve to learn without shame.",
+"You can find joy in simple things.",
+"You deserve care on difficult days.",
+"You can have goals that change over time.",
+"You deserve relationships with mutual respect.",
+"You can be proud of your resilience.",
+"You deserve room to express yourself.",
+"You can learn from the past.",
+"You deserve to be listened to patiently.",
+"You can make your own decisions.",
+"You deserve moments of calm.",
+"You can keep discovering your talents.",
+"You deserve people who cheer for you.",
+"You can take breaks without guilt.",
+"You deserve to feel hopeful.",
+"You can make your own definition of success.",
+"You deserve to be treated fairly.",
+"You can find strength in asking for support.",
+"You deserve to feel comfortable being yourself.",
+"You can celebrate another person's success, too.",
+"You deserve honesty.",
+"You can turn experience into wisdom.",
+"You deserve joy that does not depend on perfection.",
+"You can be gentle with yourself.",
+"You deserve to have your boundaries respected.",
+"You can keep learning about who you are.",
+"You deserve a chance to try.",
+"You can create traditions of your own.",
+"You deserve to feel appreciated for who you are.",
+"You can take a different route.",
+"You deserve support for your goals.",
+"You can choose what you want to carry forward.",
+"You deserve love without pretending.",
+"You can find beauty in ordinary moments.",
+"You deserve time to think.",
+"You can make new memories.",
+"You deserve a birthday full of warmth.",
+"You can keep your sense of wonder.",
+"You deserve to celebrate your growth.",
+"You can ask questions and stay curious.",
+"You deserve a life with room for joy.",
+"You can face change one day at a time.",
+"You deserve to be surrounded by care.",
+"You are worth celebrating today and every day."
+];
+
+document.getElementById("reasonGrid").innerHTML = reasons.map((reason,i) =>
+  `<div class="reason"><b>${String(i+1).padStart(2,"0")}.</b>${reason}</div>`
+).join("");
+
+/* HIDDEN MESSAGES */
+const secrets = [
+"Even when I don't say it often, I'm glad you're my sister. ♡",
+"Your happiness matters to me more than a perfect birthday website ever could.",
+"May you always find people who see the wonderful person you are.",
+"Whenever life feels heavy, remember that you deserve support and care.",
+"Here's a little reminder: you are loved on ordinary days, too.",
+"I hope your next chapter brings you closer to the life you dream about.",
+"You don't have to do everything alone. It's okay to lean on family.",
+"May your heart always have reasons to hope.",
+"You deserve good things simply because you are you.",
+"Happy Birthday, Khusssss. This little corner of the internet is yours."
+];
+let secretIndex = 0;
+
+function revealSecret() {
+  document.getElementById("secretMessage").textContent = secrets[secretIndex];
+  secretIndex = (secretIndex + 1) % secrets.length;
+  toast("A little message, just for you ♡");
+}
+
+const hugs = [
+"Sending you the biggest virtual hug. Imagine it lasting as long as you need. ♡",
+"One hug for your smile, one for your dreams, and one for every difficult day.",
+"Pause for a second. Breathe in. You deserve kindness and a little comfort.",
+"Consider this your reminder that you are appreciated and loved.",
+"Wrapping this little message around you like a warm, comforting hug."
+];
+let hugIndex = 0;
+function virtualHug() {
+  document.getElementById("hugMessage").textContent = hugs[hugIndex];
+  hugIndex = (hugIndex + 1) % hugs.length;
+  celebrate(false);
+}
+
+const fortunes = [
+"Something wonderful can begin with one small brave step.",
+"Be patient with yourself; growth is not always loud.",
+"A new memory is waiting somewhere in your next chapter.",
+"Your kindness can matter more than you realise.",
+"Give your dreams time and give yourself credit for trying.",
+"A peaceful heart is a beautiful kind of success.",
+"May the next year bring you a reason to smile unexpectedly.",
+"Keep your eyes open for small joys; they often become big memories.",
+"You are allowed to start again as many times as you need.",
+"Your story is still unfolding. There are good pages ahead."
+];
+function fortune() {
+  document.getElementById("fortuneMessage").textContent =
+    fortunes[Math.floor(Math.random() * fortunes.length)];
+}
+
+let flowerCount = 0;
+const flowers = ["🌸","🌷","🌼","✿","💐","🌺","❀","🌻"];
+function plantFlower() {
+  if (flowerCount === 0) document.getElementById("garden").innerHTML = "";
+  flowerCount++;
+  const flower = document.createElement("span");
+  flower.className = "garden-flower";
+  flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+  flower.title = "A wish for Khusssss";
+  document.getElementById("garden").appendChild(flower);
+  document.getElementById("flowerCount").textContent = "Flowers planted: " + flowerCount;
+  toast("A new flower for your happiness ♡");
+}
+
+/* LITTLE CELEBRATION */
+function celebrate(showToast = true) {
+  for (let i = 0; i < 24; i++) {
+    setTimeout(makeParticle, i * 45);
+  }
+  if (showToast) toast("Sending birthday love to Khusssss! ♡");
+}
 </script>
 </body>
 </html>
