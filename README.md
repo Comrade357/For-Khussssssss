@@ -309,10 +309,10 @@ footer p { font-size:13px; }
   <div class="lock-card">
     <div class="lock-icon">♡</div>
     <div class="eyebrow">A little universe made for you</div>
-    <h1 class="gradient">For My Khusssss</h1>
+    <h1 class="gradient">For Khusssss</h1>
     <p>
       Someone who means more than words can explain deserves something
-      made with all the love in the world.
+      made with all the love in the world.     Advance Happy Birthday to the most wonderful sister! 🎂✨ May your life be filled with endless happiness, success, love, and beautiful memories. May all your dreams come true, and may you always keep smiling. Stay blessed and keep shining 🌸🦋💖
     </p>
     <div class="pill">A special day is waiting ✧</div>
 
